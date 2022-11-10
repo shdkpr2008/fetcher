@@ -21,8 +21,10 @@ func NumLinksImagesFromDocument(documentReader io.Reader) (int, int, error) {
 	})
 
 	document.Find("img").Each(func(i int, selection *goquery.Selection) {
-		if src, exists := selection.Attr("src"); exists && IsValidURL(src) {
-			images += 1
+		if src, exists := selection.Attr("src"); exists {
+			if IsValidURL(src) || (len(src) > 9 && src[:10] == "data:image") {
+				images += 1
+			}
 		}
 	})
 
