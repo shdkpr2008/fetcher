@@ -30,6 +30,7 @@ func main() {
 		fx.Provide(service.NewFetchService),
 		fx.Provide(http.NewHttpClient),
 		fx.Provide(repository.NewNetworkRepository),
+		fx.Provide(repository.NewBrowserRepository),
 		fx.Provide(repository.NewStorageRepository),
 		fx.Provide(sqlite.NewSQLite),
 		fx.Provide(repository.NewMetadataRepository),

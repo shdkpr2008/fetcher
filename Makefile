@@ -2,6 +2,7 @@ VERSION?="0.0.1"
 GOOS?=darwin
 GOARCH?=arm64
 CGO_ENABLED?=1
+LDFLAGS?=""
 
 clean:
 	rm -rf fetcher
@@ -18,7 +19,7 @@ configure:
 	go mod tidy
 
 build:
-	GOOS=${GOOS} GOARCH=${GOARCH} CGO_ENABLED=${CGO_ENABLED} go build .
+	GOOS=${GOOS} GOARCH=${GOARCH} CGO_ENABLED=${CGO_ENABLED} go build ${LDFLAGS} .
 
 lint:
 	golangci-lint run -v --concurrency 2 \

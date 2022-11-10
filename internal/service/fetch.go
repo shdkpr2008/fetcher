@@ -24,18 +24,21 @@ type FetchService struct {
 	networkRepository  *repository.NetworkRepository
 	storageRepository  *repository.StorageRepository
 	metadataRepository *repository.MetadataRepository
+	browserRepository  *repository.BrowserRepository
 }
 
 func NewFetchService(argument argument.Argument, config config.Config,
 	networkRepository *repository.NetworkRepository,
 	storageRepository *repository.StorageRepository,
-	metadataRepository *repository.MetadataRepository) *FetchService {
+	metadataRepository *repository.MetadataRepository,
+	browserRepository *repository.BrowserRepository) *FetchService {
 	return &FetchService{
 		argument:           argument,
 		config:             config,
 		networkRepository:  networkRepository,
 		storageRepository:  storageRepository,
 		metadataRepository: metadataRepository,
+		browserRepository:  browserRepository,
 	}
 }
 
@@ -45,7 +48,7 @@ func (fS *FetchService) fetchProcessStoreUrl(url string) {
 		return
 	}
 
-	urlSource, err := fS.networkRepository.Source(url)
+	urlSource, err := fS.browserRepository.Source(url)
 	if err != nil {
 		log.Println(err.Error())
 		return
