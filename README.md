@@ -5,6 +5,9 @@ links and images.
 A details description of components, libraries, assumptions and task is available at 
 https://www.notion.so/shdkpr2008/Autify-Technical-Assignment-f52e09ce30e546bf8ccee532b69402c0  
 
+## Network
+This is a network build, for browser-less please check browserless branch.
+
 ## Prerequisite
 - Go (v1.19.3)
 - SQLite (v3)
