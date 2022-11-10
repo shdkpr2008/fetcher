@@ -5,8 +5,8 @@ links and images.
 A details description of components, libraries, assumptions and task is available at 
 https://www.notion.so/shdkpr2008/Autify-Technical-Assignment-f52e09ce30e546bf8ccee532b69402c0  
 
-## BrowserLess
-This is a browser-less build, for network please check main/master.
+## Headless
+This is a headless browser build, for network please check main/master.
 
 ## Prerequisite
 - Go (v1.19.3)
